@@ -1,6 +1,5 @@
-Want to build an app using [Next.js](https://nextjs.org/)? 
+Bootstrapped from [Sunday: A React Boilerplate](https://github.com/wahabzada/sunday)
 
-Well you don't have to install and configure all the usual dependencies. Use this boilerplate project and start 🚀 building your app right away. 
 ## What's included
 
 - [React v18.2](https://reactjs.org/)
@@ -23,13 +22,8 @@ npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Please note:
-You may need to update the [tailwind.config.js](tailwind.config.js) and include the paths to your new (.ts, .tsx) files for Tailwind to work when running the app in development environment. 
-
 
 ## Build the project
 ```bash
 npm run build
 ```
-
-
