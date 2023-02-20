@@ -5,25 +5,16 @@ import { ReposContext } from "./ReposContext"
 export const useReposState = () => {
   const { state } = useContext(ReposContext)
 
-  const recentRepos = useMemo(
-    () =>
-      state.data.sort(
-        (objA, objB) =>
-          Number(new Date(objB.created_at)) - Number(new Date(objA.created_at))
-      ),
-    [state.data]
-  )
-
-  const popularRepos = useMemo(
-    () => state.data.sort((objA, objB) => objB.watchers - objA.watchers),
-    [state.data]
-  )
-
   return {
     repos:
       state.sortBy === ReposSortEnum.RECENTLY_ADDED
-        ? recentRepos
-        : popularRepos,
+        ? state.data.sort(
+            (objA, objB) =>
+              new Date(objB.created_at).getTime() -
+              new Date(objA.created_at).getTime()
+          )
+        : state.data.sort((objA, objB) => objB.watchers - objA.watchers),
+
     loading: state.loading,
     error: state.error,
     sortBy: state.sortBy,

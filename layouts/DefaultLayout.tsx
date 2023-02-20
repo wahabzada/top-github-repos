@@ -8,14 +8,10 @@ export const DefaultLayout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Head>
-        <title>
-          Sunday | Top GitHub repositories of your favourite programming
-          languages
-        </title>
+        <title>Sunday | Top GitHub repos</title>
         <meta
           name="description"
-          content="Discover the top GitHub repositories of your favourite programming
-          languages"
+          content="Discover the trending GitHub repositories of Javascript, Typescript, Python, Go, Swift ..."
         />
         <link
           rel="apple-touch-icon"
@@ -41,17 +37,14 @@ export const DefaultLayout: React.FC<LayoutProps> = ({ children }) => {
       </Head>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 my-10">
         <header className="space-y-2">
-          <h1 className="text-2xl font-bold sm:text-center text-gray-800">
-            Sunday
+          <h1 className="text-lg font-bold sm:text-center text-gray-700">
+            Sunday:{" "}
+            <span className="text-gray-800 font-normal">Top GitHub Repos</span>
           </h1>
-          <p className="text-gray-500 sm:text-center">
-            Discover the top GitHub repositories of your favourite programming
-            languages
-          </p>
         </header>
         <main>{children}</main>
         <footer className="mt-20">
-          <p className="text-gray-600 sm:text-center text-xs mb-10">
+          <p className="text-gray-500 sm:text-center text-xs mb-10">
             © {currentYear()} Sunday
           </p>
         </footer>

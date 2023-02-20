@@ -42,7 +42,7 @@ export function useReposAction() {
             payload: data.items,
           })
 
-          console.log(data.items)
+          //console.log(data.items)
         }
       }
     } catch (error) {

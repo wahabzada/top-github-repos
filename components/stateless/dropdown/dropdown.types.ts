@@ -1,5 +1,5 @@
 export interface DropdownProps {
-  label: string
+  label: string | JSX.Element
   options: Array<DropdownOptionType>
 }
 

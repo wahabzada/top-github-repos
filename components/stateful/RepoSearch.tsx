@@ -7,6 +7,7 @@ import { IoIosTrendingUp, IoMdSad } from "react-icons/io"
 
 export const RepoSearch: React.FC = () => {
   const router = useRouter()
+  const { sort } = router.query
 
   const [searchTerm, setSearchTerm] = useState<string>("")
   const { loading, error } = useReposState()
@@ -31,7 +32,7 @@ export const RepoSearch: React.FC = () => {
   const handleSearch = (searchTerm: string) => {
     router.push({
       pathname: "/",
-      query: { language: searchTerm },
+      query: { language: searchTerm, sort: sort },
     })
   }
 

@@ -45,8 +45,11 @@ export const RepoCard: React.FC<RepoCardProps> = (card) => {
         </ul>
       )}
 
-      <p className="text-gray-400 text-xs font-light">
-        Created on {prettyDate(card.data.created_at)}
+      <p className="text-gray-400 text-xs font-light space-x-2">
+        <span> Created on {prettyDate(card.data.created_at)}</span>
+        <span className="text-xs text-gray-500 px-2 py-1">
+          {card.data.language}
+        </span>
       </p>
 
       <hr className="h-px bg-gray-100 border-0" />

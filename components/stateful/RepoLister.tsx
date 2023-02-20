@@ -3,7 +3,7 @@ import { useReposState } from "state/repos/useReposState"
 import { RepoFilters } from "./RepoFilters"
 
 export const RepoLister: React.FC = () => {
-  const { loading, error, repos, totalRepos } = useReposState()
+  const { loading, error, totalRepos, repos } = useReposState()
 
   if (loading || error) {
     return null
