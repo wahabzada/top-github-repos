@@ -1,4 +1,4 @@
-import { useContext, useMemo } from "react"
+import { useContext } from "react"
 import { ReposSortEnum } from "./repos.types"
 import { ReposContext } from "./ReposContext"
 

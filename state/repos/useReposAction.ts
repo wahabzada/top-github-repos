@@ -14,7 +14,6 @@ export function useReposAction() {
         type: ReposActionEnum.FETCH_REPOS_FAILURE,
       })
 
-      // log the error
       console.log(errorMessage)
     }
 
@@ -41,8 +40,6 @@ export function useReposAction() {
             type: ReposActionEnum.FETCH_REPOS_SUCCESS,
             payload: data.items,
           })
-
-          //console.log(data.items)
         }
       }
     } catch (error) {

@@ -1,5 +1,5 @@
-import { RepoCard } from "components/stateless/card/RepoCard"
 import { useReposState } from "state/repos/useReposState"
+import { RepoCard } from "components/stateless/card/RepoCard"
 import { RepoFilters } from "./RepoFilters"
 
 export const RepoLister: React.FC = () => {

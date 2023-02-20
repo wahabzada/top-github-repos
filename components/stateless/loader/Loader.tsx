@@ -1,6 +1,4 @@
-import { LoaderProps } from "./loader.types"
-
-export const Loader: React.FC<LoaderProps> = (loader) => {
+export const Loader: React.FC = (loader) => {
   return (
     <svg
       aria-hidden="true"

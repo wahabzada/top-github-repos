@@ -1,8 +1,8 @@
 import { RepoCardProps } from "./repoCard.types"
-import { IoMdStarOutline } from "react-icons/io"
 import { Pill } from "../pill/Pill"
 import { numberHelper } from "helper/numberHelper"
 import { dateHelper } from "helper/dateHelper"
+import { IoMdStarOutline } from "react-icons/io"
 
 export const RepoCard: React.FC<RepoCardProps> = (card) => {
   const { formatLargeNumber } = numberHelper
@@ -15,6 +15,7 @@ export const RepoCard: React.FC<RepoCardProps> = (card) => {
           <a
             aria-label="link to github repository"
             target="_blank"
+            rel="noreferrer"
             href={card.data.html_url}
             className="text-blue-500 hover:underline inline-block"
           >

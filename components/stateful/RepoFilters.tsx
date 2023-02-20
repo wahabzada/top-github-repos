@@ -41,8 +41,6 @@ export const RepoFilters: React.FC = () => {
     })
   }
 
-  console.log(new Date("2016-01-18T22:37:52Z"))
-
   return (
     <div className="flex flex-row justify-between align-middle bg-blue-50 px-3 py-2 border-l-2 border-blue-500 rounded-lg">
       <div className="self-center">
