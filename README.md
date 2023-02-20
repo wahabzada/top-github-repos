@@ -2,7 +2,7 @@ Bootstrapped from [Sunday: A React Boilerplate](https://github.com/wahabzada/sun
 
 ## What's included
 
-- [React v18.2](https://reactjs.org/)
+- [React v18.2 (Next.js)](https://reactjs.org/)
 - [Typescript v4.8](https://www.typescriptlang.org/)
 - [Tailwind v3.2](https://tailwindcss.com/)
 - [Eslint v8.27](https://eslint.org/)
