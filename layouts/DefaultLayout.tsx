@@ -1,19 +1,21 @@
 import Head from "next/head"
-
-// components
 import { LayoutProps } from "./Layout.types"
+import { dateHelper } from "helper/dateHelper"
 
 export const DefaultLayout: React.FC<LayoutProps> = ({ children }) => {
-  let now = new Date()
-  const getCurrentYear = now.getFullYear()
+  const { currentYear } = dateHelper
 
   return (
     <>
       <Head>
-        <title>Sunday | Top GitHub repositories</title>
+        <title>
+          Sunday | Top GitHub repositories of your favourite programming
+          languages
+        </title>
         <meta
           name="description"
-          content="Discover the top GitHub repositories for Javascript, Python and many more languages."
+          content="Discover the top GitHub repositories of your favourite programming
+          languages"
         />
         <link
           rel="apple-touch-icon"
@@ -37,12 +39,20 @@ export const DefaultLayout: React.FC<LayoutProps> = ({ children }) => {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <header></header>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 my-10">
+        <header className="space-y-2">
+          <h1 className="text-2xl font-bold sm:text-center text-gray-800">
+            Sunday
+          </h1>
+          <p className="text-gray-500 sm:text-center">
+            Discover the top GitHub repositories of your favourite programming
+            languages
+          </p>
+        </header>
         <main>{children}</main>
         <footer className="mt-20">
-          <p className="text-gray-600 sm:text-center text-xs">
-            © {getCurrentYear} Sunday
+          <p className="text-gray-600 sm:text-center text-xs mb-10">
+            © {currentYear()} Sunday
           </p>
         </footer>
       </div>

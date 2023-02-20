@@ -50,6 +50,13 @@ export function useReposAction() {
     }
   }
 
+  const sortRepos = (sortType: string) => {
+    dispatch({
+      type: ReposActionEnum.SORT_REPOS,
+      payload: sortType,
+    })
+  }
+
   const resetRepos = () => {
     dispatch({
       type: ReposActionEnum.RESET_REPOS,
@@ -59,5 +66,6 @@ export function useReposAction() {
   return {
     fetchRepos,
     resetRepos,
+    sortRepos,
   }
 }

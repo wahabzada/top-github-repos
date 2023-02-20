@@ -1,5 +1,5 @@
 import { createContext, useReducer } from "react"
-import { reposContextType, reposStateType } from "./repos.types"
+import { reposContextType, ReposSortEnum, reposStateType } from "./repos.types"
 import { reposReducer } from "./reposReducer"
 
 export const ReposContext = createContext({} as reposContextType)
@@ -9,6 +9,7 @@ const useRepos = () => {
     data: [],
     loading: false,
     error: false,
+    sortBy: ReposSortEnum.MOST_STARS,
   }
   const [state, dispatch] = useReducer(reposReducer, initialState)
 

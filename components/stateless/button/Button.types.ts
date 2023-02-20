@@ -1,5 +1,5 @@
 export interface ButtonProps {
-  label: string
+  label: string | JSX.Element
   onClick: (event: React.MouseEvent) => void
   disabled?: boolean
   loading?: boolean

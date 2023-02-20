@@ -34,6 +34,12 @@ export const reposReducer = (
         data: [],
       }
 
+    case ReposActionEnum.SORT_REPOS:
+      return {
+        ...state,
+        sortBy: action.payload,
+      }
+
     default:
       return state
   }
