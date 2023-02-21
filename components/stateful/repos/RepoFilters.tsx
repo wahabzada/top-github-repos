@@ -51,7 +51,7 @@ export const RepoFilters: React.FC = () => {
         label={
           <span>
             Sort: {formattedSortValue(sortBy)}
-            <IoMdArrowDropdown className="inline h-4 w-4" />{" "}
+            <IoMdArrowDropdown className="inline h-4 w-4" />
           </span>
         }
         options={filters}

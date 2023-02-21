@@ -20,7 +20,7 @@ export const RepoLister: React.FC = () => {
     return () => resetRepos()
   }, [language])
 
-  if (loading || error) {
+  if (loading || error || totalRepos < 1) {
     return null
   } else {
     return (
