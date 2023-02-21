@@ -7,10 +7,8 @@ export default function Home() {
   return (
     <DefaultLayout>
       <ReposContextProvider>
-        <div className="mx-auto max-w-2xl my-5 space-y-10">
-          <RepoSearch />
-          <RepoLister />
-        </div>
+        <RepoSearch />
+        <RepoLister />
       </ReposContextProvider>
     </DefaultLayout>
   )

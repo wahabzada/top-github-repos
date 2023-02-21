@@ -25,7 +25,7 @@ export const RepoLister: React.FC = () => {
   } else {
     return (
       <>
-        {totalRepos > 0 && <RepoFilters />}
+        <RepoFilters />
         <ul className="flex flex-col space-y-3">
           {repos.map((repo) => (
             <li key={repo.id}>

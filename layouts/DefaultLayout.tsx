@@ -42,7 +42,9 @@ export const DefaultLayout: React.FC<LayoutProps> = ({ children }) => {
             <span className="text-gray-800 font-normal">Top GitHub Repos</span>
           </h1>
         </header>
-        <main>{children}</main>
+        <main>
+          <div className="mx-auto max-w-2xl my-5 space-y-10">{children}</div>
+        </main>
         <footer className="mt-20">
           <p className="text-gray-500 sm:text-center text-xs mb-10">
             © {currentYear()} Sunday
