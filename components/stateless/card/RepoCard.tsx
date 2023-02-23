@@ -9,7 +9,10 @@ export const RepoCard: React.FC<RepoCardProps> = (card) => {
   const { prettyDate } = dateHelper
 
   return (
-    <article className=" flex flex-col flex-wrap space-y-3">
+    <article
+      className=" flex flex-col flex-wrap space-y-3"
+      data-testid="repo-card"
+    >
       <div>
         <div className="flex flex-row flex-wrap space-x-3">
           <a

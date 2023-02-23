@@ -18,6 +18,7 @@ export const Input: React.FC<InputProps> = (input) => {
       autoFocus={input.autoFocus}
       onBlur={input.onBlur}
       maxLength={input.maxLength}
+      aria-label="input"
     />
   )
 }

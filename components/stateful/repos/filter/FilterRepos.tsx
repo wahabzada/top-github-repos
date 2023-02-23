@@ -6,7 +6,7 @@ import { useReposAction } from "state/repos/useReposAction"
 import { Dropdown } from "components/stateless/dropdown/Dropdown"
 import { IoMdArrowDropdown } from "react-icons/io"
 
-export const RepoFilters: React.FC = () => {
+export const FilterRepos: React.FC = () => {
   const router = useRouter()
   const { language, sort } = router.query
 

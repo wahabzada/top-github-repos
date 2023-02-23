@@ -5,7 +5,7 @@ import { Button } from "components/stateless/button/Button"
 import { Input } from "components/stateless/input/Input"
 import { IoIosTrendingUp, IoMdSad } from "react-icons/io"
 
-export const RepoSearch: React.FC = () => {
+export const SearchRepos: React.FC = () => {
   const router = useRouter()
   const { sort } = router.query
 

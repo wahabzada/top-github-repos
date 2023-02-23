@@ -1,11 +1,11 @@
 import { useEffect } from "react"
 import { useReposState } from "state/repos/useReposState"
 import { RepoCard } from "components/stateless/card/RepoCard"
-import { RepoFilters } from "./RepoFilters"
+import { FilterRepos } from "../filter/FilterRepos"
 import { useReposAction } from "state/repos/useReposAction"
 import { useRouter } from "next/router"
 
-export const RepoLister: React.FC = () => {
+export const ListRepos: React.FC = () => {
   const router = useRouter()
   const { language } = router.query
 
@@ -25,7 +25,7 @@ export const RepoLister: React.FC = () => {
   } else {
     return (
       <>
-        <RepoFilters />
+        <FilterRepos />
         <ul className="flex flex-col space-y-3">
           {repos.map((repo) => (
             <li key={repo.id}>

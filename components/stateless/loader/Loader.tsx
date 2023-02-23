@@ -1,4 +1,4 @@
-export const Loader: React.FC = (loader) => {
+export const Loader: React.FC = () => {
   return (
     <svg
       aria-hidden="true"

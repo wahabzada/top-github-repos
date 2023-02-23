@@ -13,6 +13,7 @@ export const Dropdown: React.FC<DropdownProps> = (dropdown) => {
         className={
           "justify-center rounded-lg px-3 py-1 text-sm ring-1 ring-gray-200 hover:ring-gray-300 text-gray-500 active:ring-gray-300 focus:outline-none"
         }
+        data-testid="dropdown"
       >
         {dropdown.label}
       </Menu.Button>
