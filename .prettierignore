@@ -11,6 +11,10 @@ public
 .vscode
 .eslintrc.json
 
+# testing
+/coverage
+/.swc
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
