@@ -45,7 +45,9 @@ export const FilterRepos: React.FC = () => {
     <div className="flex flex-row justify-between align-middle bg-blue-50 px-3 py-2 border-l-2 border-blue-500 rounded-lg">
       <div className="self-center">
         <span className="text-blue-500 font-medium">{reposLanguage}</span>:{" "}
-        <span className="text-gray-500 text-sm">{totalRepos} repositories</span>
+        <span className="text-gray-500 text-sm" data-testid="filter-title">
+          {totalRepos} repositories
+        </span>
       </div>
       <Dropdown
         label={

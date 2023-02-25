@@ -10,7 +10,8 @@
     "check-format": "prettier --check .",
     "format": "prettier --write .",
     "prepare": "husky install",
-    "test": "jest --watch"
+    "test-watch": "jest --watch",
+    "test": "jest"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.11",

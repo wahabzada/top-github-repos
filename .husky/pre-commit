@@ -15,5 +15,12 @@ npm run lint ||
         false; 
 )
 
+# Run Tests 
+npm run test ||
+(
+        echo 'Tests failed'
+        false; 
+)
+
 # If everything passes... Now we can commit
-echo '✅ ESlint and Formatting checks passed'
+echo '✅ Tests, ESlint, Formatting checks passed'
