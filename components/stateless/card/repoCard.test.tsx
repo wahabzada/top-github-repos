@@ -29,7 +29,7 @@ test("RepoCard component", () => {
   // has description
   expect(screen.getByText(repoMockData.description)).toBeInTheDocument
 
-  // has link url
+  // has url
   const repoCardLink = screen.getByRole("link")
   expect(repoCardLink.getAttribute("href")).toBe(repoMockData.html_url)
 })

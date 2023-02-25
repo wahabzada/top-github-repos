@@ -1,4 +1,4 @@
-import { RepoCardProps } from "./repoCard.types"
+import { RepoCardProps } from "./RepoCard.types"
 import { Pill } from "../pill/Pill"
 import { numberHelper } from "helper/numberHelper"
 import { dateHelper } from "helper/dateHelper"

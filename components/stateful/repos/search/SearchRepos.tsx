@@ -38,10 +38,14 @@ export const SearchRepos: React.FC = () => {
 
   return (
     <div className="space-y-5">
-      <form onSubmit={handleSubmit} className="relative">
+      <form
+        onSubmit={handleSubmit}
+        className="relative"
+        data-testid="search-repos"
+      >
         <Input
           value={searchTerm}
-          name="searchInput"
+          name="search-input"
           placeholder={
             loading ? "Loading ..." : "Javascript, Python, Swift ..."
           }
@@ -54,8 +58,9 @@ export const SearchRepos: React.FC = () => {
           <Button
             label={"Search"}
             onClick={handleSubmit}
-            disabled={loading}
+            disabled={loading || !searchTerm}
             loading={loading}
+            testId="search-btn"
           />
         </div>
       </form>

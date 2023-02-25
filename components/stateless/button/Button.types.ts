@@ -3,4 +3,5 @@ export interface ButtonProps {
   onClick: (event: React.MouseEvent) => void
   disabled?: boolean
   loading?: boolean
+  testId?: string
 }

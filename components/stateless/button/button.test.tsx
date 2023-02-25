@@ -1,5 +1,5 @@
 import { Button } from "./Button"
-import { render, screen, cleanup, fireEvent } from "@testing-library/react"
+import { render, screen, fireEvent } from "@testing-library/react"
 
 // test type: unit
 test("Button component", () => {

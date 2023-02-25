@@ -1,4 +1,4 @@
-import { PillProps } from "./pill.types"
+import { PillProps } from "./Pill.types"
 
 export const Pill: React.FC<PillProps> = (pill) => {
   return (

@@ -1,6 +1,6 @@
 import { Fragment } from "react"
 import { Menu, Transition } from "@headlessui/react"
-import { DropdownProps } from "./dropdown.types"
+import { DropdownProps } from "./Dropdown.types"
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ")

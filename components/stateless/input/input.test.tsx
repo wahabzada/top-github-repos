@@ -6,7 +6,9 @@ test("Button component", () => {
   // renders
   const value = "I am an input field"
   const maxLength = 10
-  render(<Input value={value} maxLength={maxLength} />)
+  render(
+    <Input value={value} maxLength={maxLength} onChange={() => jest.fn()} />
+  )
 
   const input = screen.getByLabelText("input")
 

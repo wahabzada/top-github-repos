@@ -1,4 +1,4 @@
-import { InputProps } from "./input.types"
+import { InputProps } from "./Input.types"
 
 export const Input: React.FC<InputProps> = (input) => {
   let className =
