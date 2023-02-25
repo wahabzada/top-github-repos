@@ -1,29 +1,26 @@
 import { render, screen, fireEvent, cleanup } from "@testing-library/react"
 import { SearchRepos } from "./SearchRepos"
 import { useRouter } from "next/router"
-import { ReposContextProvider } from "state/repos/ReposContext"
+import {
+  MockReposContextProvider,
+  mockReposStateType,
+} from "test-utils/MockReposContextProvider"
 
 // test type: integration
 jest.mock("next/router", () => ({
   useRouter: jest.fn(),
 }))
 
-const setup = () => {
+const setup = (state: mockReposStateType) => {
   useRouter.mockReturnValue({ query: { sort: "" } })
+
   const utils = render(
-    <ReposContextProvider>
+    <MockReposContextProvider newState={state}>
       <SearchRepos />
-    </ReposContextProvider>
+    </MockReposContextProvider>
   )
-  const searchForm = screen.getByTestId("search-repos")
-  const searchInput = screen.getByRole("textbox")
-  const searchBtn = screen.getByTestId("search-btn")
-  const trendingSearchesList = screen.getByRole("list")
+
   return {
-    searchForm,
-    searchInput,
-    searchBtn,
-    trendingSearchesList,
     ...utils,
   }
 }
@@ -31,18 +28,25 @@ const setup = () => {
 afterEach(cleanup)
 
 test("search input empty when initially rendered", () => {
-  const { searchInput } = setup()
+  setup({})
+  const searchInput = screen.getByRole("searchbox")
   expect(searchInput.value).toBe("")
 })
 
 test("search btn disabled when search input has no value", () => {
-  const { searchBtn, searchInput } = setup()
+  setup({})
+  const searchInput = screen.getByRole("searchbox")
+  const searchBtn = screen.getByTestId("search-btn")
+
   expect(searchInput.value).toBe("")
   expect(searchBtn).toHaveProperty("disabled", true)
 })
 
 test("search btn enabled when search input has value", async () => {
-  const { searchBtn, searchInput } = setup()
+  setup({})
+
+  const searchInput = screen.getByRole("searchbox")
+  const searchBtn = screen.getByTestId("search-btn")
 
   const value = "typescript"
   fireEvent.change(searchInput, { target: { value: value } })
@@ -51,5 +55,6 @@ test("search btn enabled when search input has value", async () => {
 })
 
 test("trending searches list rendered", async () => {
-  const { trendingSearchesList } = setup()
+  setup({})
+  screen.getByTestId("trending-searches")
 })

@@ -46,6 +46,7 @@ export const SearchRepos: React.FC = () => {
         <Input
           value={searchTerm}
           name="search-input"
+          type="search"
           placeholder={
             loading ? "Loading ..." : "Javascript, Python, Swift ..."
           }
@@ -70,7 +71,7 @@ export const SearchRepos: React.FC = () => {
           0 repositories found <IoMdSad className="inline text-lg mb-1" />
         </p>
       ) : (
-        <ul className="flex flex-wrap">
+        <ul className="flex flex-wrap" data-testid="trending-searches">
           {popularSearches.map((search) => (
             <li key={search} className="my-2 mr-2">
               <Button

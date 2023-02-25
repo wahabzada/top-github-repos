@@ -7,25 +7,26 @@ import {
 } from "@testing-library/react"
 import { FilterRepos } from "./FilterRepos"
 import { useRouter } from "next/router"
-import { ReposContextProvider } from "state/repos/ReposContext"
+import {
+  MockReposContextProvider,
+  mockReposStateType,
+} from "test-utils/MockReposContextProvider"
 
 // test type: integration
 jest.mock("next/router", () => ({
   useRouter: jest.fn(),
 }))
 
-const setup = () => {
+const setup = (state: mockReposStateType) => {
   useRouter.mockReturnValue({ query: { sort: "" } })
+
   const utils = render(
-    <ReposContextProvider>
+    <MockReposContextProvider newState={state}>
       <FilterRepos />
-    </ReposContextProvider>
+    </MockReposContextProvider>
   )
-  const sortDropdown = screen.getByTestId("dropdown")
-  const filterTitle = screen.getByTestId("filter-title")
+
   return {
-    sortDropdown,
-    filterTitle,
     ...utils,
   }
 }
@@ -33,14 +34,16 @@ const setup = () => {
 afterEach(cleanup)
 
 test("filter title rendered", async () => {
-  const { filterTitle } = setup()
-  expect(filterTitle.textContent).toContain("repositories")
+  setup({})
+  expect(screen.getByTestId("filter-title").textContent).toContain(
+    "repositories"
+  )
 })
 
 test("sort dropdown options opened", async () => {
-  const { sortDropdown } = setup()
+  setup({})
 
-  fireEvent.click(sortDropdown)
+  fireEvent.click(screen.getByTestId("dropdown"))
   await waitFor(() => {
     screen.getByRole("menuitem", {
       name: "most stars",

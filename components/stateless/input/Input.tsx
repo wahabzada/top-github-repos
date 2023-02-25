@@ -7,7 +7,7 @@ export const Input: React.FC<InputProps> = (input) => {
   className += input.className ? " " + input.className : ""
   return (
     <input
-      type="text"
+      type={input.type ? input.type : "text"}
       value={input.value}
       name={input.name}
       placeholder={input.placeholder}

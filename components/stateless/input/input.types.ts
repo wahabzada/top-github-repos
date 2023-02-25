@@ -3,6 +3,7 @@ import { ChangeEventHandler } from "react"
 export interface InputProps {
   value: string
   name?: string
+  type?: string
   placeholder?: string
   autoComplete?: string
   onChange?: ChangeEventHandler<HTMLInputElement>

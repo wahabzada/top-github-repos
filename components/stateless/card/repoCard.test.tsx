@@ -1,16 +1,6 @@
 import { RepoCard } from "./RepoCard"
 import { render, screen } from "@testing-library/react"
-
-export const repoMockData = {
-  id: 1,
-  full_name: "repo name",
-  description: "mock repo object",
-  watchers: 1000,
-  html_url: "/repo-link",
-  language: "typescript",
-  topics: ["typescript"],
-  created_at: "",
-}
+import { repoMockData } from "test-utils/MockReposContextProvider"
 
 // test type: unit
 test("RepoCard component", () => {

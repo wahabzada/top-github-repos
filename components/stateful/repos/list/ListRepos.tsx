@@ -26,7 +26,7 @@ export const ListRepos: React.FC = () => {
     return (
       <>
         <FilterRepos />
-        <ul className="flex flex-col space-y-3">
+        <ul className="flex flex-col space-y-3" data-testid="repo-list">
           {repos.map((repo) => (
             <li key={repo.id}>
               <RepoCard data={repo} />
