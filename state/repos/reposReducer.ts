@@ -1,4 +1,9 @@
-import { reposActionType, ReposActionEnum, reposStateType } from "./repos.types"
+import {
+  reposActionType,
+  ReposActionEnum,
+  reposStateType,
+  repoType,
+} from "./repos.types"
 
 export const reposReducer = (
   state: reposStateType,
@@ -24,7 +29,7 @@ export const reposReducer = (
         ...state,
         loading: false,
         error: false,
-        data: action.payload,
+        data: action.payload as repoType[],
       }
     case ReposActionEnum.RESET_REPOS:
       return {
@@ -37,7 +42,7 @@ export const reposReducer = (
     case ReposActionEnum.SORT_REPOS:
       return {
         ...state,
-        sortBy: action.payload,
+        sortBy: action.payload as string,
       }
 
     default:
