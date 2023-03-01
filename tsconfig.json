@@ -20,8 +20,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "**/**/*.tsx",
-    "**/**/*.ts",
+    "components/**/**/*.tsx",
+    "components`/**/**/*.ts",
     "next.config.js"
   ],
   "exclude": ["node_modules"]
