@@ -1,4 +1,3 @@
-import { buffer } from "stream/consumers"
 import { Loader } from "../loader/Loader"
 import { ButtonProps } from "./Button.types"
 
