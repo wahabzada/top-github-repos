@@ -50,7 +50,10 @@ export const SearchRepos: React.FC = () => {
           placeholder={
             loading ? "Loading ..." : "Javascript, Python, Swift ..."
           }
-          onChange={(event) => setSearchTerm(event.target.value)}
+          onChange={(event) => {
+            const target = event.target as HTMLButtonElement
+            setSearchTerm(target.value)
+          }}
           disabled={loading}
           className="pr-24"
           maxLength={50}
