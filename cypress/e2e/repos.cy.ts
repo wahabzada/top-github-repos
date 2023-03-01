@@ -1,13 +1,13 @@
 describe("repos", () => {
   const searchTerm = "Python"
 
-  it("lists repos for Python: using the trending search button ", () => {
+  it(`lists repos for ${searchTerm}: using the trending search button`, () => {
     cy.visit("http://localhost:3000/")
 
     cy.get('[data-testid="search-btn"]').should("be.disabled")
     cy.get('[name="search-input"]').should("be.empty")
 
-    cy.contains("button", "Python").click()
+    cy.contains("button", `${searchTerm}`).click()
     cy.url().should("include", `language=${searchTerm}`)
 
     cy.get('[data-testid="repo-list"]')
@@ -20,7 +20,7 @@ describe("repos", () => {
     cy.url().should("include", "sort=recently_added")
   })
 
-  it("lists repos for Python: using the search box ", () => {
+  it(`lists repos for ${searchTerm}: using the search box `, () => {
     cy.visit("http://localhost:3000/")
 
     cy.get('[data-testid="search-btn"]').should("be.disabled")
