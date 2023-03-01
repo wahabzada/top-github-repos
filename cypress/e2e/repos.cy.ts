@@ -9,7 +9,6 @@ describe("repos", () => {
 
     cy.contains("button", `${searchTerm}`).click()
     cy.url().should("include", `language=${searchTerm}`)
-
     cy.get('[data-testid="repo-list"]')
       .children()
       .its("length")
