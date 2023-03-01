@@ -3,11 +3,12 @@ Bootstrapped from [Sunday: A React Boilerplate](https://github.com/wahabzada/sun
 ## What's included
 
 - [React v18.2 (Next.js)](https://reactjs.org/)
-- [Typescript v4.8](https://www.typescriptlang.org/)
-- [Tailwind v3.2](https://tailwindcss.com/)
-- [Eslint v8.27](https://eslint.org/)
-- [Prettier v2.7](https://prettier.io/)
-- [Husky v8.0](https://typicode.github.io/husky/#/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Tailwind](https://tailwindcss.com/)
+- [React testing library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Eslint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Husky](https://typicode.github.io/husky/#/)
 
 ## Get started
 
