@@ -1,6 +1,6 @@
 import { RepoCard } from "./RepoCard"
 import { render, screen } from "@testing-library/react"
-import { repoMockData } from "test-utils/MockReposContextProvider"
+import { repoMockData } from "tests/utils/MockReposContextProvider"
 
 // test type: unit
 test("RepoCard component", () => {

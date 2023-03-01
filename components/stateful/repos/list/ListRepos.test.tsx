@@ -5,7 +5,7 @@ import {
   MockReposContextProvider,
   mockReposStateType,
   repoMockData,
-} from "test-utils/MockReposContextProvider"
+} from "tests/utils/MockReposContextProvider"
 
 // test type: integration
 jest.mock("next/router", () => ({

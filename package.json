@@ -11,7 +11,8 @@
     "format": "prettier --write .",
     "prepare": "husky install",
     "test-watch": "jest --watch",
-    "test": "jest"
+    "test": "jest",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.11",
@@ -32,6 +33,7 @@
     "@testing-library/react": "^14.0.0",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "autoprefixer": "^10.4.13",
+    "cypress": "^12.7.0",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
