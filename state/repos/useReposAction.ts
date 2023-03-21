@@ -1,13 +1,16 @@
 import { useContext } from "react"
 import { ReposContext } from "./ReposContext"
 import { ReposActionEnum } from "./repos.types"
+import { useReposAPI } from "apis/useReposAPI"
+import { sanitizeHelper } from "helper/sanitizeHelper"
 
 export function useReposAction() {
   const { dispatch } = useContext(ReposContext)
+  const { fetchReposAPI } = useReposAPI()
+  const { sanitizeURIString } = sanitizeHelper
 
   const fetchRepos = async (language: string) => {
-    if (!language) return
-    const lang = language.toLowerCase().trim()
+    if (!sanitizeURIString(language)) return
 
     const fetchReposFailed = (errorMessage: string) => {
       dispatch({
@@ -22,17 +25,10 @@ export function useReposAction() {
         type: ReposActionEnum.FETCH_REPOS_BEGIN,
       })
 
-      const requestOptions = {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-      }
-      const response = await fetch(
-        `https://api.github.com/search/repositories?q=language:${lang}&sort=stars&order=desc`,
-        requestOptions
-      )
+      const response = await fetchReposAPI(language)
 
       if (!response.ok) {
-        fetchReposFailed(`No repositories found for the keyword ${lang} :(`)
+        fetchReposFailed(`No repositories found for the keyword ${language} :(`)
       } else {
         const data = await response.json()
         if (data.items) {

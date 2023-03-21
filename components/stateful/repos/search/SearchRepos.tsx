@@ -4,10 +4,12 @@ import { useReposState } from "state/repos/useReposState"
 import { Button } from "components/stateless/button/Button"
 import { Input } from "components/stateless/input/Input"
 import { IoIosTrendingUp, IoMdSad } from "react-icons/io"
+import { sanitizeHelper } from "helper/sanitizeHelper"
 
 export const SearchRepos: React.FC = () => {
   const router = useRouter()
   const { sort } = router.query
+  const { sanitizeURIString } = sanitizeHelper
 
   const [searchTerm, setSearchTerm] = useState<string>("")
   const { loading, error } = useReposState()
@@ -24,16 +26,18 @@ export const SearchRepos: React.FC = () => {
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault()
 
-    if (searchTerm) {
+    if (sanitizeURIString(searchTerm)) {
       handleSearch(searchTerm)
     }
   }
 
   const handleSearch = (searchTerm: string) => {
-    router.push({
-      pathname: "/",
-      query: { language: searchTerm, sort: sort },
-    })
+    if (sanitizeURIString(searchTerm)) {
+      router.push({
+        pathname: "/",
+        query: { language: sanitizeURIString(searchTerm), sort: sort },
+      })
+    }
   }
 
   return (
