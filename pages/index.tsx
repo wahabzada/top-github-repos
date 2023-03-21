@@ -9,15 +9,6 @@ export default function Home() {
       <ReposContextProvider>
         <SearchRepos />
         <ListRepos />
-
-        <button
-          type="button"
-          onClick={() => {
-            throw new Error("Sentry Frontend Error")
-          }}
-        >
-          Throw error
-        </button>
       </ReposContextProvider>
     </DefaultLayout>
   )
