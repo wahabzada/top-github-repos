@@ -8,7 +8,7 @@ describe("repos", () => {
     cy.get('[name="search-input"]').should("be.empty")
 
     cy.contains("button", `${searchTerm}`).click()
-    cy.url().should("include", `language=${searchTerm}`)
+    cy.url().should("include", `language=${searchTerm.toLowerCase()}`)
     cy.get('[data-testid="repo-list"]')
       .children()
       .its("length")
@@ -29,7 +29,7 @@ describe("repos", () => {
       .type(`${searchTerm}`)
       .then(() => cy.get('[data-testid="search-btn"]').click())
 
-    cy.url().should("include", `language=${searchTerm}`)
+    cy.url().should("include", `language=${searchTerm.toLowerCase()}`)
 
     cy.get('[data-testid="repo-list"]')
       .children()

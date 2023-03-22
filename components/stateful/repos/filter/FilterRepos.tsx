@@ -14,7 +14,11 @@ export const FilterRepos: React.FC = () => {
   const { sortRepos } = useReposAction()
 
   useEffect(() => {
-    if (sort) {
+    if (
+      sort &&
+      (sort === ReposSortEnum.MOST_STARS ||
+        sort === ReposSortEnum.RECENTLY_ADDED)
+    ) {
       sortRepos(sort as string)
     }
   }, [sort])
